@@ -1,0 +1,26 @@
+#content textview {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 12px;
+  border: solid 1px @borders;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+#content {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+#bar_status {
+  min-height: 46px;
+}
+#bar_status revealer box {
+  background-color: inherit;
+}
+
+.overlay {
+  padding: 12px;
+}

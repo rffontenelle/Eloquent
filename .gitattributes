@@ -1,0 +1,8 @@
+package-lock.json -diff
+data/icons/re.sonny.Eloquent-symbolic.svg -diff
+data/icons/re.sonny.Eloquent.Devel.svg -diff
+data/icons/re.sonny.Eloquent.svg -diff
+po/*.po -diff
+
+# po/re.sonny.Eloquent.pot -diff
+# po/*.po -diff

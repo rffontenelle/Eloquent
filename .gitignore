@@ -1,0 +1,16 @@
+.flatpak
+.flatpak-builder
+build
+builddir
+/flatpak
+node_modules/
+repo
+install
+.eslintcache
+*~
+*.compiled
+*.flatpak
+*.gresource
+.fenv
+LanguageTool-6.5
+LanguageTool-6.5.zip

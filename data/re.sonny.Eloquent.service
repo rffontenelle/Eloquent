@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=re.sonny.Eloquent
+Exec=@bindir@/re.sonny.Eloquent --gapplication-service

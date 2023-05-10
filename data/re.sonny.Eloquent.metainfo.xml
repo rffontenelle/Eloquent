@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component type="desktop">
+  <id>re.sonny.Eloquent</id>
+  <launchable type="desktop-id">re.sonny.Eloquent.desktop</launchable>
+  <name translatable="no">Eloquent</name>
+  <developer_name translatable="no">Sonny Piers</developer_name>
+  <update_contact>sonnyp@gnome.org</update_contact>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <summary>Your proofreading assistant</summary>
+  <translation type="gettext">re.sonny.Eloquent</translation>
+  <description>
+    <p>Eloquent is a proofreading software for English, Spanish, French, German, Portuguese, Polish, Dutch, and more than 20 other languages. It finds many errors that a simple spell checker cannot detect.</p>
+    <p>It works fully offline, powered by LanguageTool standalone server.</p>
+  </description>
+  <url type="homepage">https://eloquent.sonny.re</url>
+  <url type="bugtracker">https://eloquent.sonny.re/feedback</url>
+  <url type="donation">https://eloquent.sonny.re/donate</url>
+  <!-- <url type="translate">https://eloquent.sonny.re/translate</url> -->
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/sonnyp/Eloquent/main/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0.0" date="2025-02-12">
+      <description>This is the first release of Eloquent. We hope you like it.</description>
+    </release>
+  </releases>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>HighContrast</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+  <branding>
+    <color type="primary" scheme_preference="light">#a1f5e9</color>
+    <color type="primary" scheme_preference="dark">#097988</color>
+  </branding>
+</component>

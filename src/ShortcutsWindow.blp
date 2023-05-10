@@ -1,0 +1,29 @@
+using Gtk 4.0;
+
+ShortcutsWindow shortcuts_window {
+  modal: true;
+
+  ShortcutsSection {
+    ShortcutsGroup {
+      ShortcutsShortcut {
+        accelerator: "F10";
+        title: _("Open Main Menu");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Primary>W";
+        title: _("Close Window");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Primary>question";
+        title: _("Keyboard Shortcuts");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Primary>Q";
+        title: _("Quit");
+      }
+    }
+  }
+}

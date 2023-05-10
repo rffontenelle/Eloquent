@@ -1,0 +1,122 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ApplicationWindow window {
+  default-width: 800;
+  default-height: 600;
+
+  content: Box {
+    orientation: vertical;
+
+    Adw.HeaderBar {
+      styles ["flat"]
+
+      [start]
+      DropDown dropdown_langs {
+        enable-search: true;
+        model: StringList {
+          strings ["Auto"]
+        };
+      }
+
+      [end]
+      MenuButton {
+        primary: true;
+        tooltip-text: _("Main Menu");
+        menu-model: menu_model;
+        icon-name: "open-menu-symbolic";
+      }
+    }
+
+    Box {
+      orientation: vertical;
+      name: "content";
+
+      Overlay overlay {
+        [overlay]
+        $SuggestionOverlay overlay_suggestion {
+          halign: start;
+          valign: start;
+          visible: false;
+        }
+
+        ScrolledWindow {
+          TextView text_view {
+            vexpand: true;
+            buffer: Gtk.TextBuffer {
+              enable-undo: true;
+            };
+            wrap-mode: word;
+            input-hints: no_spellcheck | word_completion | uppercase_sentences | emoji;
+          }
+        }
+      }
+
+      ActionBar bar_status {
+        name: "bar_status";
+        revealed: false;
+
+        [start]
+        Box {
+          Label {
+            label: "Characters";
+          }
+
+          Label label_characters {
+            label: " 0";
+          }
+        }
+
+        [start]
+        Separator {
+          styles ["spacer"]
+        }
+
+        [start]
+        Box {
+          Label {
+            label: "Words";
+          }
+
+          Label label_words {
+            label: " 0";
+          }
+        }
+
+        [end]
+        Label label_status {
+          visible: false;
+          styles ["error"]
+          label: "";
+          tooltip-text: _("Number of detected issues");
+        }
+
+        [end]
+        Image image_ok {
+          visible: false;
+          styles ["success"]
+          icon-name: "check-round-outline-symbolic";
+        }
+
+        [end]
+        Adw.Spinner spinner {
+          tooltip-text: _("Waiting for LanguageTool");
+        }
+      }
+    }
+  };
+}
+
+menu menu_model {
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About Eloquent");
+      action: "app.about";
+    }
+  }
+}

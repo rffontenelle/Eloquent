@@ -1,0 +1,35 @@
+using Gtk 4.0;
+
+template $SuggestionOverlay : Box {
+  halign: center;
+  valign: center;
+
+  Box {
+    orientation: vertical;
+    styles ["card", "overlay", "view"]
+
+    Box {
+      halign: fill;
+      orientation: vertical;
+
+      Box {
+        Label category {
+          justify: left;
+          label: "";
+        }
+      }
+      Label description {
+        margin-top: 12;
+        // wrap: true;
+        // lines: 2;
+        // single-line-mode: false;
+        label: "";
+      }
+    }
+
+    Box suggestions {
+      margin-top: 12;
+      spacing: 6;
+    }
+  }
+}
