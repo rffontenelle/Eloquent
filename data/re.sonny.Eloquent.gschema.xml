@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist gettext-domain="re.sonny.Eloquent">
-  <schema id="re.sonny.Eloquent" path="/re/sonny/Eloquent/">
-    <key name="show-app-names" type="b">
-      <default>false</default>
-    </key>
-    </schema>
+  <schema id="re.sonny.Eloquent" path="/re/sonny/Eloquent/"/>
 </schemalist>

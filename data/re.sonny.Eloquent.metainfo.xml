@@ -16,6 +16,7 @@
   <url type="homepage">https://eloquent.sonny.re</url>
   <url type="bugtracker">https://eloquent.sonny.re/feedback</url>
   <url type="donation">https://eloquent.sonny.re/donate</url>
+  <url type="vcs-browser">https://eloquent.sonny.re/source</url>
   <!-- <url type="translate">https://eloquent.sonny.re/translate</url> -->
   <screenshots>
     <screenshot type="default">

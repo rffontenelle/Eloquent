@@ -4,7 +4,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 12px;
-  border: solid 1px @borders;
+  border: solid 1px var(--border-color);
   font-size: 24px;
   line-height: 1.5;
 }
@@ -17,6 +17,7 @@
 #bar_status {
   min-height: 46px;
 }
+
 #bar_status revealer box {
   background-color: inherit;
 }
