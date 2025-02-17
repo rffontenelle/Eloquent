@@ -10,7 +10,7 @@ It works fully offline, powered by [LanguageTool standalone server](https://gith
 
 ![screenshot](data/screenshot.png)
 
-<a href='https://flathub.org/apps/re.sonny.Workbench'><img width='240' alt='Download on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/></a>
+<a href='https://flathub.org/apps/re.sonny.Eloquent'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en'/></a>
 
 ## Development
 

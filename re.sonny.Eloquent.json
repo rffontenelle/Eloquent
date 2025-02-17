@@ -4,7 +4,9 @@
   "runtime-version": "47",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Eloquent",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.openjdk21"],
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.openjdk21"
+  ],
   "finish-args": [
     "--share=network",
     "--share=ipc",
@@ -17,7 +19,9 @@
     {
       "name": "LanguageTool",
       "buildsystem": "simple",
-      "build-commands": ["cp -r . /app/LanguageTool"],
+      "build-commands": [
+        "cp -r . /app/LanguageTool"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -29,13 +33,18 @@
         {
           "name": "openjdk",
           "buildsystem": "simple",
-          "build-commands": ["/usr/lib/sdk/openjdk21/install.sh"]
+          "build-commands": [
+            "/usr/lib/sdk/openjdk21/install.sh"
+          ]
         }
       ]
     },
     {
       "name": "blueprint-compiler",
       "buildsystem": "meson",
+      "cleanup": [
+        "*"
+      ],
       "sources": [
         {
           "type": "git",
