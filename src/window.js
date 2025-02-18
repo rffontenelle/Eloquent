@@ -134,13 +134,6 @@ export default function Window({ application, file }) {
   tag_table.add(tag_style);
 
   function updateStatus(count) {
-    if (count === null) {
-      spinner.visible = false;
-      label_status.visible = false;
-      image_ok.visible = false;
-      return;
-    }
-
     spinner.visible = false;
 
     if (count === 0) {
@@ -189,18 +182,14 @@ export default function Window({ application, file }) {
     let words_count = 0;
     let characters_count = 0;
 
-    if (buffer.text.length === 0) {
-      bar_status.revealed = false;
-    } else {
-      bar_status.revealed = true;
-      const words = buffer.text
-        .replace(/[.,?!;()"'-]/g, " ")
-        .replace(/\s+/g, " ")
-        .split(" ");
-      words_count = words.length;
-      const characters = words.join("");
-      characters_count = [...characters].length;
-    }
+    const words = buffer.text
+      .replace(/[.,?!;()"'-]/g, " ")
+      .replace(/\s+/g, " ")
+      .split(" ")
+      .filter(word => word !== "");
+    words_count = words.length;
+    const characters = words.join("");
+    characters_count = [...characters].length;
 
     label_words.label = ` ${words_count}`;
     label_characters.label = ` ${characters_count}`;

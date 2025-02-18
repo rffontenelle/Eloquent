@@ -52,9 +52,8 @@ Adw.ApplicationWindow window {
         }
       }
 
-      ActionBar bar_status {
+      CenterBox bar_status {
         name: "bar_status";
-        revealed: false;
 
         [start]
         Box {
@@ -65,15 +64,11 @@ Adw.ApplicationWindow window {
           Label label_characters {
             label: " 0";
           }
-        }
 
-        [start]
-        Separator {
-          styles ["spacer"]
-        }
+          Separator {
+            styles ["spacer"]
+          }
 
-        [start]
-        Box {
           Label {
             label: "Words";
           }
@@ -84,23 +79,23 @@ Adw.ApplicationWindow window {
         }
 
         [end]
-        Label label_status {
-          visible: false;
-          styles ["error"]
-          label: "";
-          tooltip-text: _("Number of detected issues");
-        }
+        Box {
+          Label label_status {
+            visible: false;
+            styles ["error"]
+            label: "";
+            tooltip-text: _("Number of detected issues");
+          }
 
-        [end]
-        Image image_ok {
-          visible: false;
-          styles ["success"]
-          icon-name: "check-round-outline-symbolic";
-        }
+          Image image_ok {
+            visible: false;
+            styles ["success"]
+            icon-name: "check-round-outline-symbolic";
+          }
 
-        [end]
-        Adw.Spinner spinner {
-          tooltip-text: _("Waiting for LanguageTool");
+          Adw.Spinner spinner {
+            tooltip-text: _("Waiting for LanguageTool");
+          }
         }
       }
     }
