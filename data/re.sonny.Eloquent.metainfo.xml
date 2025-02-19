@@ -21,20 +21,23 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/sonnyp/Eloquent/main/data/screenshot.png</image>
+      <caption>Main Window</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
     <release version="1.1" date="2025-02-19">
-      <ul>
-        <li>Improve language detection</li>
-        <li>Runs LanguageTool as a service in the background</li>
-        <li>Clean the list of languages</li>
-        <li>Fix a small design bug in the status bar</li>
-      </ul>
+      <description translatable="no">
+        <ul>
+          <li>Improve language detection</li>
+          <li>Runs LanguageTool as a service in the background</li>
+          <li>Clean the list of languages</li>
+          <li>Fix a small design bug in the status bar</li>
+        </ul>
+      </description>
     </release>
     <release version="1.0" date="2025-02-12">
-      <description>This is the first release of Eloquent. We hope you like it.</description>
+      <description translatable="no">This is the first release of Eloquent. We hope you like it.</description>
     </release>
   </releases>
   <kudos>
