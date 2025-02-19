@@ -29,7 +29,8 @@
       <ul>
         <li>Improve language detection</li>
         <li>Runs LanguageTool as a service in the background</li>
-        <li>Fix a small UI bug in the status bar</li>
+        <li>Clean the list of languages</li>
+        <li>Fix a small design bug in the status bar</li>
       </ul>
     </release>
     <release version="1.0" date="2025-02-12">
