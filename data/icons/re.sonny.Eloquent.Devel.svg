@@ -3,7 +3,7 @@
     <filter id="a" height="100%" width="100%" x="0%" y="0%">
         <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
     </filter>
-    <linearGradient id="b" gradientTransform="matrix(1 0 0 0.866667 0 -130.133347)" gradientUnits="userSpaceOnUse" x1="11.999994" x2="116" y1="254" y2="254">
+    <linearGradient id="b" gradientTransform="matrix(1 0 0 0.866667 0 -130.13335)" gradientUnits="userSpaceOnUse" x1="11.999994" x2="116" y1="254" y2="254">
         <stop offset="0" stop-color="#20a4bc"/>
         <stop offset="0.0384616" stop-color="#57e3ce"/>
         <stop offset="0.0769231" stop-color="#31b5be"/>
@@ -19,7 +19,7 @@
     </linearGradient>
     <linearGradient id="d" x1="16" x2="16" xlink:href="#c" y1="41.999973" y2="67.999969"/>
     <linearGradient id="e" gradientTransform="matrix(-1 0 0 1 128 9.999969)" x1="16" x2="16" xlink:href="#c" y1="32.000004" y2="58"/>
-    <linearGradient id="f" gradientTransform="matrix(0 -1.055556 1.055556 0 -104.766602 126.567383)" gradientUnits="userSpaceOnUse" x1="82.011177" x2="118.011177" y1="194" y2="194">
+    <linearGradient id="f" gradientTransform="matrix(-0 -1.055556 1.055556 -0 -104.766602 126.567383)" gradientUnits="userSpaceOnUse" x1="82.011177" x2="118.011177" y1="194" y2="194">
         <stop offset="0" stop-color="#3cdec6"/>
         <stop offset="1" stop-color="#90ecde"/>
     </linearGradient>
@@ -69,8 +69,8 @@
                     <path d="m 48 48 h 32 v 12 h -32 z m 0 0" fill="#f6f5f4"/>
                     <path d="m 12 68 h 104 v 4 h -104 z m 0 0" fill="#34c1ca"/>
                     <path d="m 100.011719 2 c 10.492187 0 19 8.507812 19 19 s -8.507813 19 -19 19 c -10.492188 0 -19 -8.507812 -19 -19 s 8.507812 -19 19 -19 z m 0 0" fill="url(#f)"/>
-                    <path d="m 91 23 l 6.496094 6.496094 l 11.503906 -11.507813" fill="none" stroke="#31b5be" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4"/>
-                    <path d="m 91 21 l 6.496094 6.496094 l 11.503906 -11.507813" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4"/>
+                    <path d="m 91 195 l 6.496094 6.496094 l 11.503906 -11.507813" fill="none" stroke="#31b5be" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4" transform="matrix(1 0 0 1 0 -172)"/>
+                    <path d="m 91 193 l 6.496094 6.496094 l 11.503906 -11.507813" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4" transform="matrix(1 0 0 1 0 -172)"/>
                 </g>
             </g>
         </g>

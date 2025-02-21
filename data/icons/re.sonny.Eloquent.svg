@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg height="128px" viewBox="0 0 128 128" width="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <linearGradient id="a" gradientTransform="matrix(1 0 0 0.866667 0 -130.133347)" gradientUnits="userSpaceOnUse" x1="11.999994" x2="116" y1="254" y2="254">
+    <linearGradient id="a" gradientTransform="matrix(1 0 0 0.866667 0 -130.13335)" gradientUnits="userSpaceOnUse" x1="11.999994" x2="116" y1="254" y2="254">
         <stop offset="0" stop-color="#20a4bc"/>
         <stop offset="0.0384616" stop-color="#57e3ce"/>
         <stop offset="0.0769231" stop-color="#31b5be"/>
@@ -16,7 +16,7 @@
     </linearGradient>
     <linearGradient id="c" x1="16" x2="16" xlink:href="#b" y1="41.999973" y2="67.999969"/>
     <linearGradient id="d" gradientTransform="matrix(-1 0 0 1 128 9.999969)" x1="16" x2="16" xlink:href="#b" y1="32.000004" y2="58"/>
-    <linearGradient id="e" gradientTransform="matrix(0 -1.055556 1.055556 0 -104.766602 126.567383)" gradientUnits="userSpaceOnUse" x1="82.011177" x2="118.011177" y1="194" y2="194">
+    <linearGradient id="e" gradientTransform="matrix(-0 -1.055556 1.055556 -0 -104.766602 126.567383)" gradientUnits="userSpaceOnUse" x1="82.011177" x2="118.011177" y1="194" y2="194">
         <stop offset="0" stop-color="#3cdec6"/>
         <stop offset="1" stop-color="#90ecde"/>
     </linearGradient>
