@@ -1,5 +1,5 @@
 project('Eloquent',
-  version: '1.0',
+  version: '1.2',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0-only'
 )
