@@ -15,7 +15,7 @@ import "./icons/check-round-outline-symbolic.svg" assert { type: "icon" };
 
 let diagnostics = [];
 
-export default function Window({ application, file }) {
+export default function Window({ application }) {
   const {
     window,
     text_view,
@@ -26,7 +26,6 @@ export default function Window({ application, file }) {
     label_status,
     spinner,
     image_ok,
-    bar_status,
     dropdown_langs,
   } = build(Interface);
 
@@ -49,11 +48,11 @@ export default function Window({ application, file }) {
     }
 
     const iter_location = text_view.get_iter_location(iter);
-    // FIXME: magic numbers
-    rectangle.y = iter_location.y + 48;
-    rectangle.x = iter_location.x + 22;
+    const [x, y] = text_view.buffer_to_window_coords(Gtk.TextWindowType.TEXT, iter_location.x, iter_location.y)
 
-    console.log(iter_location.x, iter_location.y);
+    // FIXME: magic numbers
+    rectangle.x = x + 22;
+    rectangle.y = y + 48;
 
     const text_view_width = text_view.get_width();
     const [natural_width] = child.measure(Gtk.Orientation.HORIZONTAL, -1);
