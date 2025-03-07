@@ -27,12 +27,18 @@ export default function Window({ application }) {
     spinner,
     image_ok,
     dropdown_langs,
+    scrolled_window
   } = build(Interface);
 
   if (__DEV__) window.add_css_class("devel");
   window.set_application(application);
 
   popover_suggestion.buffer = buffer;
+
+  const vadjustment = scrolled_window.vadjustment;
+  vadjustment.connect("value-changed", () => {
+    popover_suggestion.popdown();
+  });
 
   buffer.connect("notify::cursor-position", () => {
     const { cursor_position } = buffer;
