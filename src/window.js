@@ -35,8 +35,17 @@ export default function Window({ application }) {
 
   popover_suggestion.buffer = buffer;
 
+  // Hide the popover on scroll
   const vadjustment = scrolled_window.vadjustment;
   vadjustment.connect("value-changed", () => {
+    popover_suggestion.popdown();
+  });
+
+  // Hide the popover on resize
+  window.connect('notify::default-width', () => {
+    popover_suggestion.popdown();
+  });
+  window.connect("notify::default-height", () => {
     popover_suggestion.popdown();
   });
 

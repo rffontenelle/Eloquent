@@ -24,11 +24,12 @@
         "mkdir /app/fastText",
         "cp fasttext *.o /app/fastText"
       ],
-      "sources": [{
+      "sources": [
+        {
           "type": "git",
           "url": "https://github.com/facebookresearch/fastText.git",
           "commit": "1142dc4c4ecbc19cc16eee5cdd28472e689267e6"
-          }
+        }
       ]
     },
     {
@@ -38,11 +39,11 @@
         "cp lid.176.bin /app/fastText"
       ],
       "sources": [
-          {
-            "type": "file",
-            "url": "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin",
-            "sha256": "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e"
-          }
+        {
+          "type": "file",
+          "url": "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin",
+          "sha256": "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e"
+        }
       ]
     },
     {
