@@ -10,7 +10,7 @@ import { check } from "./languagetool.js";
 import DropdownLang from "./DropdownLang.js";
 
 import Interface from "./window.blp" assert { type: "uri" };
-import "./widgets/SuggestionOverlay.js";
+import "./widgets/SuggestionPopover.js";
 import "./icons/check-round-outline-symbolic.svg" assert { type: "icon" };
 
 let diagnostics = [];
@@ -19,8 +19,8 @@ export default function Window({ application }) {
   const {
     window,
     text_view,
-    overlay_suggestion,
-    overlay,
+    buffer,
+    popover_suggestion,
     label_words,
     label_characters,
     label_status,
@@ -32,74 +32,46 @@ export default function Window({ application }) {
   if (__DEV__) window.add_css_class("devel");
   window.set_application(application);
 
-  const buffer = text_view.buffer;
-
-  overlay.connect("get-child-position", (self, child, rectangle) => {
-    const { cursor_position } = buffer;
-    const iter = buffer.get_iter_at_offset(cursor_position);
-
-    // Get iterator at the start of the tag or display line
-    // to cover the case where the tag is wrapped
-    // eslint-disable-next-line no-constant-condition
-    while (true) {
-      if (iter.starts_tag(null)) break;
-      if (text_view.starts_display_line(iter)) break;
-      if (!iter.backward_char()) break;
-    }
-
-    const iter_location = text_view.get_iter_location(iter);
-    const [x, y] = text_view.buffer_to_window_coords(Gtk.TextWindowType.TEXT, iter_location.x, iter_location.y)
-
-    // FIXME: magic numbers
-    rectangle.x = x + 22;
-    rectangle.y = y + 48;
-
-    const text_view_width = text_view.get_width();
-    const [natural_width] = child.measure(Gtk.Orientation.HORIZONTAL, -1);
-
-    const overflow = natural_width + rectangle.x - text_view_width;
-    if (overflow > 0) {
-      rectangle.x -= overflow;
-    }
-
-    return true;
-  });
-
-  let position;
+  popover_suggestion.buffer = buffer;
 
   buffer.connect("notify::cursor-position", () => {
     const { cursor_position } = buffer;
-    if (position === cursor_position) return;
-    position = cursor_position;
 
-    overlay_suggestion.reset();
+    popover_suggestion.reset();
 
     const iter = buffer.get_iter_at_offset(cursor_position);
     const { tag, start, end } = getTag(iter);
     if (!tag) {
-      overlay_suggestion.set_visible(false);
+      popover_suggestion.popdown();
       return;
     }
 
     const match = getDiagnostic(start, end);
     if (!match) {
-      overlay_suggestion.set_visible(false);
+      popover_suggestion.popdown();
       return;
     }
 
-    overlay_suggestion.text_view = text_view;
-    overlay_suggestion.set_title(match.shortMessage || "Grammar");
-    overlay_suggestion.set_description(match.message);
-    overlay_suggestion.set_range([start, end]);
-    overlay_suggestion.buffer = buffer;
+    popover_suggestion.text_view = text_view;
+    popover_suggestion.set_title(match.shortMessage || _("Grammar"));
+    popover_suggestion.set_description(match.message);
+    popover_suggestion.set_range([start, end]);
 
-    console.debug(JSON.stringify(match, null, 2));
-
-    overlay_suggestion.set_visible(true);
+    // console.debug(JSON.stringify(match, null, 2));
 
     match.replacements?.slice(0, 3).forEach((replacement) => {
-      overlay_suggestion.add_suggestion({ value: replacement.value });
+      popover_suggestion.add_suggestion({ value: replacement.value });
     });
+
+    const iter_location = text_view.get_iter_location(iter);
+    const [x, y] = text_view.buffer_to_window_coords(Gtk.TextWindowType.WIDGET, iter_location.x, iter_location.y)
+    const rectangle = new Gdk.Rectangle({
+      // FIXME: magic numbers
+      x: x + 22,
+      y: y + 48
+    })
+    popover_suggestion.set_pointing_to(rectangle);
+    popover_suggestion.popup()
   });
 
   const tag_table = buffer.get_tag_table();
@@ -195,8 +167,8 @@ export default function Window({ application }) {
   }
 
   function checkGrammar() {
-    overlay_suggestion.reset();
-    overlay_suggestion.set_visible(false);
+    popover_suggestion.reset();
+    popover_suggestion.popdown();
     scheduleCheck();
   }
 

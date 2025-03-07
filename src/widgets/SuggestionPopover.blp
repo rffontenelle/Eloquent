@@ -1,12 +1,10 @@
 using Gtk 4.0;
 
-template $SuggestionOverlay : Box {
-  halign: center;
-  valign: center;
+template $SuggestionPopover : Popover {
+  autohide: false;
 
   Box {
     orientation: vertical;
-    styles ["card", "overlay", "view"]
 
     Box {
       halign: fill;

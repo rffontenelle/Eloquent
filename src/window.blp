@@ -30,23 +30,16 @@ Adw.ApplicationWindow window {
       orientation: vertical;
       name: "content";
 
-      Overlay overlay {
-        [overlay]
-        $SuggestionOverlay overlay_suggestion {
-          halign: start;
-          valign: start;
-          visible: false;
-        }
+      $SuggestionPopover popover_suggestion {}
 
-        ScrolledWindow {
-          TextView text_view {
-            vexpand: true;
-            buffer: Gtk.TextBuffer {
-              enable-undo: true;
-            };
-            wrap-mode: word;
-            input-hints: no_spellcheck | word_completion | uppercase_sentences | emoji;
-          }
+      ScrolledWindow {
+        TextView text_view {
+          vexpand: true;
+          buffer: Gtk.TextBuffer buffer {
+            enable-undo: true;
+          };
+          wrap-mode: word;
+          input-hints: no_spellcheck | word_completion | uppercase_sentences | emoji;
         }
       }
 

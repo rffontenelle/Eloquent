@@ -1,9 +1,9 @@
 import GObject from "gi://GObject";
 import Gtk from "gi://Gtk";
 
-import Template from "./SuggestionOverlay.blp" assert { type: "uri" };
+import Template from "./SuggestionPopover.blp" assert { type: "uri" };
 
-class SuggestionOverlay extends Gtk.Box {
+class SuggestionPopover extends Gtk.Popover {
   constructor(params) {
     super(params);
 
@@ -58,9 +58,9 @@ class SuggestionOverlay extends Gtk.Box {
 
 export default GObject.registerClass(
   {
-    GTypeName: "SuggestionOverlay",
+    GTypeName: "SuggestionPopover",
     Template,
     InternalChildren: ["suggestions", "category", "description"],
   },
-  SuggestionOverlay,
+  SuggestionPopover,
 );
